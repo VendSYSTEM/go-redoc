@@ -1,0 +1,61 @@
+version: "3"
+
+vars:
+  REDOC_VERSION: 2.5.3
+  REDOC_PATH: assets/redoc.standalone.js
+  REDOC_URL: https://cdn.jsdelivr.net/npm/redoc@{{.REDOC_VERSION}}/bundles/redoc.standalone.js
+
+tasks:
+  default:
+    desc: Run the full check suite
+    cmds:
+      - task: all
+
+  all:
+    desc: Ensure assets, lint, and test
+    cmds:
+      - task: redoc:ensure
+      - task: lint
+      - task: test
+
+  fmt:
+    desc: Format Go files
+    cmds:
+      - go fmt ./...
+
+  vet:
+    desc: Run go vet
+    cmds:
+      - go vet -mod=readonly ./...
+
+  lint:
+    desc: Format, vet, and run golangci-lint
+    cmds:
+      - task: fmt
+      - task: vet
+      - GOFLAGS=-mod=readonly golangci-lint run ./...
+
+  test:
+    desc: Run tests with race detector
+    cmds:
+      - go test -mod=readonly -race ./...
+
+  deps:
+    desc: Install development dependencies
+    cmds:
+      - go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
+
+  redoc:ensure:
+    desc: Download the ReDoc bundle when it is missing
+    cmds:
+      - task: redoc:update
+    status:
+      - test -f {{.REDOC_PATH}}
+
+  redoc:update:
+    desc: Download the pinned ReDoc standalone bundle
+    cmds:
+      - curl -fsSL -o {{.REDOC_PATH}} {{.REDOC_URL}}
+      - perl -0pi -e 's/[ \t]+$//mg' {{.REDOC_PATH}}
+    generates:
+      - "{{.REDOC_PATH}}"
