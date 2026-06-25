@@ -2,7 +2,7 @@ package iris
 
 import (
 	"github.com/kataras/iris/v12"
-	"github.com/mvrilo/go-redoc"
+	"github.com/VendSYSTEM/go-redoc/v2"
 )
 
 func New(doc redoc.Redoc) iris.Handler {
