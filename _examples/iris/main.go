@@ -2,8 +2,8 @@ package iris
 
 import (
 	"github.com/kataras/iris/v12"
-	"github.com/mvrilo/go-redoc"
-	irisdoc "github.com/mvrilo/go-redoc/iris"
+	"github.com/VendSYSTEM/go-redoc/v2"
+	irisdoc "github.com/VendSYSTEM/go-redoc/iris"
 )
 
 func main() {

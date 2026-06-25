@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/mvrilo/go-redoc"
-	fiberredoc "github.com/mvrilo/go-redoc/fiber"
+	"github.com/VendSYSTEM/go-redoc/v2"
+	fiberredoc "github.com/VendSYSTEM/go-redoc/fiber"
 )
 
 func main() {

@@ -9,7 +9,7 @@ The embedded ReDoc bundle is pinned to `redoc@2.5.3` in `Taskfile.yml`.
 ## Install
 
 ```sh
-go get github.com/VendSYSTEM/go-redoc
+go get github.com/VendSYSTEM/go-redoc/v2
 ```
 
 Install the adapter module you use:
@@ -29,7 +29,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/VendSYSTEM/go-redoc"
+	"github.com/VendSYSTEM/go-redoc/v2"
 )
 
 func main() {
@@ -95,7 +95,7 @@ import (
 	"embed"
 	"net/http"
 
-	"github.com/VendSYSTEM/go-redoc"
+	"github.com/VendSYSTEM/go-redoc/v2"
 )
 
 //go:embed docs/openapi.yaml
@@ -128,7 +128,7 @@ All adapters wrap the same `doc.Handler()` behavior.
 ```go
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/VendSYSTEM/go-redoc"
+	"github.com/VendSYSTEM/go-redoc/v2"
 	ginredoc "github.com/VendSYSTEM/go-redoc/gin"
 )
 
@@ -143,7 +143,7 @@ r.Use(ginredoc.New(doc))
 ```go
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/VendSYSTEM/go-redoc"
+	"github.com/VendSYSTEM/go-redoc/v2"
 	echoredoc "github.com/VendSYSTEM/go-redoc/echo"
 )
 
@@ -158,7 +158,7 @@ r.Use(echoredoc.New(doc))
 ```go
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/VendSYSTEM/go-redoc"
+	"github.com/VendSYSTEM/go-redoc/v2"
 	fiberredoc "github.com/VendSYSTEM/go-redoc/fiber"
 )
 
@@ -173,7 +173,7 @@ r.Use(fiberredoc.New(doc))
 ```go
 import (
 	"github.com/kataras/iris/v12"
-	"github.com/VendSYSTEM/go-redoc"
+	"github.com/VendSYSTEM/go-redoc/v2"
 	irisdoc "github.com/VendSYSTEM/go-redoc/iris"
 )
 

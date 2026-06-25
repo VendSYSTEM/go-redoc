@@ -1,11 +1,13 @@
-module github.com/mvrilo/go-redoc/iris
+module github.com/VendSYSTEM/go-redoc/iris
 
-go 1.23.2
+go 1.24
 
 require (
+	github.com/VendSYSTEM/go-redoc/v2 v2.0.0
 	github.com/kataras/iris/v12 v12.2.11
-	github.com/mvrilo/go-redoc v0.1.5
 )
+
+replace github.com/VendSYSTEM/go-redoc/v2 => ../
 
 require (
 	github.com/BurntSushi/toml v1.4.0 // indirect
