@@ -2,7 +2,7 @@ package ginredoc
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/mvrilo/go-redoc"
+	"github.com/VendSYSTEM/go-redoc/v2"
 )
 
 func New(doc redoc.Redoc) gin.HandlerFunc {

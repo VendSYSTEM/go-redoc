@@ -1,11 +1,11 @@
-module github.com/mvrilo/go-redoc/fiber
+module github.com/VendSYSTEM/go-redoc/fiber
 
-go 1.21.5
+go 1.24
 
 require (
+	github.com/VendSYSTEM/go-redoc/v2 v2.0.0
 	github.com/gofiber/adaptor/v2 v2.2.1
 	github.com/gofiber/fiber/v2 v2.52.0
-	github.com/mvrilo/go-redoc v0.1.5-0.20240119235626-7cdf2a730a86
 )
 
 require (
@@ -22,4 +22,4 @@ require (
 	golang.org/x/sys v0.15.0 // indirect
 )
 
-replace github.com/mvrilo/go-redoc => ../
+replace github.com/VendSYSTEM/go-redoc/v2 => ../

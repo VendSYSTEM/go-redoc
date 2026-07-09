@@ -2,11 +2,11 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/mvrilo/go-redoc"
+	"github.com/VendSYSTEM/go-redoc/v2"
 
-	_ "github.com/mvrilo/go-redoc/_examples/gen/docs"
+	_ "github.com/VendSYSTEM/go-redoc/_examples/gen/docs"
 
-	fiberredoc "github.com/mvrilo/go-redoc/fiber"
+	fiberredoc "github.com/VendSYSTEM/go-redoc/fiber"
 )
 
 //go:generate swag init
