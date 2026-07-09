@@ -1,0 +1,142 @@
+{
+  "/home/mg/vend/go-redoc/redoc.go": {
+    "mtime": 1783488111.571822,
+    "ast_hash": "efa5f89ff928b7009ad0343fbd31b935",
+    "semantic_hash": "efa5f89ff928b7009ad0343fbd31b935"
+  },
+  "/home/mg/vend/go-redoc/redoc_test.go": {
+    "mtime": 1783488111.571822,
+    "ast_hash": "1c2e3172cb27225bf65e8e485527e75a",
+    "semantic_hash": "1c2e3172cb27225bf65e8e485527e75a"
+  },
+  "/home/mg/vend/go-redoc/assets/redoc.standalone.js": {
+    "mtime": 1783488111.5657756,
+    "ast_hash": "3911f6aad52c494771f4dacbdc19f87c",
+    "semantic_hash": "3911f6aad52c494771f4dacbdc19f87c"
+  },
+  "/home/mg/vend/go-redoc/echo/echo.go": {
+    "mtime": 1783488111.5657756,
+    "ast_hash": "c34b2a6d6856efe4655f857981803d60",
+    "semantic_hash": "c34b2a6d6856efe4655f857981803d60"
+  },
+  "/home/mg/vend/go-redoc/iris/iris.go": {
+    "mtime": 1783488111.571822,
+    "ast_hash": "431319ea774cb8204eab54164ef751c1",
+    "semantic_hash": "431319ea774cb8204eab54164ef751c1"
+  },
+  "/home/mg/vend/go-redoc/gin/gin.go": {
+    "mtime": 1783488111.5702975,
+    "ast_hash": "3ba5511294a86df333df09caca20d5b3",
+    "semantic_hash": "3ba5511294a86df333df09caca20d5b3"
+  },
+  "/home/mg/vend/go-redoc/_examples/echo/openapi.json": {
+    "mtime": 1783488111.5583248,
+    "ast_hash": "36cb3c5762fbb3e9bcd189e8b40151fc",
+    "semantic_hash": "36cb3c5762fbb3e9bcd189e8b40151fc"
+  },
+  "/home/mg/vend/go-redoc/_examples/echo/main.go": {
+    "mtime": 1783488111.5583248,
+    "ast_hash": "2eae3f2810b727399443d406c88c4957",
+    "semantic_hash": "2eae3f2810b727399443d406c88c4957"
+  },
+  "/home/mg/vend/go-redoc/_examples/http/openapi.json": {
+    "mtime": 1783488111.5630941,
+    "ast_hash": "36cb3c5762fbb3e9bcd189e8b40151fc",
+    "semantic_hash": "36cb3c5762fbb3e9bcd189e8b40151fc"
+  },
+  "/home/mg/vend/go-redoc/_examples/http/main.go": {
+    "mtime": 1783488111.5630941,
+    "ast_hash": "356e4c6611646941cd85b4e278735da2",
+    "semantic_hash": "356e4c6611646941cd85b4e278735da2"
+  },
+  "/home/mg/vend/go-redoc/_examples/gorilla/openapi.json": {
+    "mtime": 1783488111.5624251,
+    "ast_hash": "36cb3c5762fbb3e9bcd189e8b40151fc",
+    "semantic_hash": "36cb3c5762fbb3e9bcd189e8b40151fc"
+  },
+  "/home/mg/vend/go-redoc/_examples/gorilla/main.go": {
+    "mtime": 1783488111.5624251,
+    "ast_hash": "185c7f13da126127c50b6e732f7231ec",
+    "semantic_hash": "185c7f13da126127c50b6e732f7231ec"
+  },
+  "/home/mg/vend/go-redoc/_examples/iris/openapi.json": {
+    "mtime": 1783488111.563709,
+    "ast_hash": "36cb3c5762fbb3e9bcd189e8b40151fc",
+    "semantic_hash": "36cb3c5762fbb3e9bcd189e8b40151fc"
+  },
+  "/home/mg/vend/go-redoc/_examples/iris/main.go": {
+    "mtime": 1783488111.563709,
+    "ast_hash": "f00044a59de4886acf06cb1bc4877eac",
+    "semantic_hash": "f00044a59de4886acf06cb1bc4877eac"
+  },
+  "/home/mg/vend/go-redoc/_examples/gin/openapi.json": {
+    "mtime": 1783488111.561763,
+    "ast_hash": "36cb3c5762fbb3e9bcd189e8b40151fc",
+    "semantic_hash": "36cb3c5762fbb3e9bcd189e8b40151fc"
+  },
+  "/home/mg/vend/go-redoc/_examples/gin/main.go": {
+    "mtime": 1783488111.561763,
+    "ast_hash": "51034626b09e1dbc7354accb7987fc83",
+    "semantic_hash": "51034626b09e1dbc7354accb7987fc83"
+  },
+  "/home/mg/vend/go-redoc/_examples/gen/main.go": {
+    "mtime": 1783488111.5601673,
+    "ast_hash": "06501730f42727ed94749f0146555a3d",
+    "semantic_hash": "06501730f42727ed94749f0146555a3d"
+  },
+  "/home/mg/vend/go-redoc/_examples/gen/docs/docs.go": {
+    "mtime": 1783488111.5600512,
+    "ast_hash": "34f48b172560f13e647c7f47e172ae9d",
+    "semantic_hash": "34f48b172560f13e647c7f47e172ae9d"
+  },
+  "/home/mg/vend/go-redoc/_examples/gen/docs/swagger.json": {
+    "mtime": 1783488111.5601673,
+    "ast_hash": "75b0023bf7db57ef22abf6ac3b175ba3",
+    "semantic_hash": "75b0023bf7db57ef22abf6ac3b175ba3"
+  },
+  "/home/mg/vend/go-redoc/_examples/fiber/openapi.json": {
+    "mtime": 1783488111.5590193,
+    "ast_hash": "36cb3c5762fbb3e9bcd189e8b40151fc",
+    "semantic_hash": "36cb3c5762fbb3e9bcd189e8b40151fc"
+  },
+  "/home/mg/vend/go-redoc/_examples/fiber/main.go": {
+    "mtime": 1783488111.5590193,
+    "ast_hash": "7e39ba729848019c5b8d5bd4a6077f9b",
+    "semantic_hash": "7e39ba729848019c5b8d5bd4a6077f9b"
+  },
+  "/home/mg/vend/go-redoc/testdata/spec.json": {
+    "mtime": 1783488111.571822,
+    "ast_hash": "c7a44c520f365e841bee2f679364340e",
+    "semantic_hash": "c7a44c520f365e841bee2f679364340e"
+  },
+  "/home/mg/vend/go-redoc/fiber/fiber.go": {
+    "mtime": 1783488111.5696676,
+    "ast_hash": "c39ff31649cc0b3666b20203f838ee5f",
+    "semantic_hash": "c39ff31649cc0b3666b20203f838ee5f"
+  },
+  "/home/mg/vend/go-redoc/Taskfile.yml": {
+    "mtime": 1783488111.5567415,
+    "ast_hash": "0c86cc0b876960de8af078ca6b830800",
+    "semantic_hash": "0c86cc0b876960de8af078ca6b830800"
+  },
+  "/home/mg/vend/go-redoc/README.md": {
+    "mtime": 1783488111.5567415,
+    "ast_hash": "55e559f10a1d9be684fd83d67faab4b4",
+    "semantic_hash": "55e559f10a1d9be684fd83d67faab4b4"
+  },
+  "/home/mg/vend/go-redoc/assets/index.html": {
+    "mtime": 1783488111.563709,
+    "ast_hash": "6e020ec18ecc6df82de62bd866bd894a",
+    "semantic_hash": "6e020ec18ecc6df82de62bd866bd894a"
+  },
+  "/home/mg/vend/go-redoc/_examples/gen/docs/swagger.yaml": {
+    "mtime": 1783488111.5601673,
+    "ast_hash": "7582fdda128a44c482a9823ca2eef708",
+    "semantic_hash": "7582fdda128a44c482a9823ca2eef708"
+  },
+  "/home/mg/vend/go-redoc/.github/workflows/ci.yaml": {
+    "mtime": 1783488111.5567415,
+    "ast_hash": "29532345c8e713d32399a58df7da38ed",
+    "semantic_hash": "29532345c8e713d32399a58df7da38ed"
+  }
+}
