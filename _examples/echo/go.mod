@@ -2,13 +2,13 @@ module github.com/VendSYSTEM/go-redoc/_examples/echo
 
 go 1.24
 
-replace github.com/VendSYSTEM/go-redoc/v2 => ../../
+replace github.com/VendSYSTEM/go-redoc/v3 => ../../
 
-replace github.com/VendSYSTEM/go-redoc/echo => ../../echo
+replace github.com/VendSYSTEM/go-redoc/echo/v3 => ../../echo
 
 require (
-	github.com/VendSYSTEM/go-redoc/echo v0.0.0
-	github.com/VendSYSTEM/go-redoc/v2 v2.0.0
+	github.com/VendSYSTEM/go-redoc/echo/v3 v3.0.0
+	github.com/VendSYSTEM/go-redoc/v3 v3.0.0
 	github.com/labstack/echo/v4 v4.11.4
 )
 

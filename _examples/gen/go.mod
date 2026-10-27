@@ -2,13 +2,13 @@ module github.com/VendSYSTEM/go-redoc/_examples/gen
 
 go 1.24
 
-replace github.com/VendSYSTEM/go-redoc/v2 => ../../
+replace github.com/VendSYSTEM/go-redoc/v3 => ../../
 
-replace github.com/VendSYSTEM/go-redoc/fiber => ../../fiber
+replace github.com/VendSYSTEM/go-redoc/fiber/v3 => ../../fiber
 
 require (
-	github.com/VendSYSTEM/go-redoc/fiber v0.0.0
-	github.com/VendSYSTEM/go-redoc/v2 v2.0.0
+	github.com/VendSYSTEM/go-redoc/fiber/v3 v3.0.0
+	github.com/VendSYSTEM/go-redoc/v3 v3.0.0
 	github.com/gofiber/fiber/v2 v2.52.0
 	github.com/swaggo/swag v1.16.2
 )

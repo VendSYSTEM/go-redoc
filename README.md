@@ -4,21 +4,21 @@
 
 The package supports `net/http` directly and includes adapters for `gin`, `echo`, `fiber`, and `iris`. It serves an existing OpenAPI JSON or YAML file. It does not generate the spec for you.
 
-The embedded ReDoc bundle is pinned to `redoc@2.5.3` in `Taskfile.yml`.
+The embedded ReDoc bundle is pinned to `redoc@3.0.1` in `Taskfile.yml`.
 
 ## Install
 
 ```sh
-go get github.com/VendSYSTEM/go-redoc/v2
+go get github.com/VendSYSTEM/go-redoc/v3
 ```
 
 Install the adapter module you use:
 
 ```sh
-go get github.com/VendSYSTEM/go-redoc/gin
-go get github.com/VendSYSTEM/go-redoc/echo
-go get github.com/VendSYSTEM/go-redoc/fiber
-go get github.com/VendSYSTEM/go-redoc/iris
+go get github.com/VendSYSTEM/go-redoc/gin/v3
+go get github.com/VendSYSTEM/go-redoc/echo/v3
+go get github.com/VendSYSTEM/go-redoc/fiber/v3
+go get github.com/VendSYSTEM/go-redoc/iris/v3
 ```
 
 ## Quick Start
@@ -29,7 +29,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/VendSYSTEM/go-redoc/v2"
+	"github.com/VendSYSTEM/go-redoc/v3"
 )
 
 func main() {
@@ -95,7 +95,7 @@ import (
 	"embed"
 	"net/http"
 
-	"github.com/VendSYSTEM/go-redoc/v2"
+	"github.com/VendSYSTEM/go-redoc/v3"
 )
 
 //go:embed docs/openapi.yaml
@@ -128,8 +128,8 @@ All adapters wrap the same `doc.Handler()` behavior.
 ```go
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/VendSYSTEM/go-redoc/v2"
-	ginredoc "github.com/VendSYSTEM/go-redoc/gin"
+	"github.com/VendSYSTEM/go-redoc/v3"
+	ginredoc "github.com/VendSYSTEM/go-redoc/gin/v3"
 )
 
 doc := redoc.Redoc{SpecFile: "./openapi.json", SpecPath: "/openapi.json", DocsPath: "/docs"}
@@ -143,8 +143,8 @@ r.Use(ginredoc.New(doc))
 ```go
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/VendSYSTEM/go-redoc/v2"
-	echoredoc "github.com/VendSYSTEM/go-redoc/echo"
+	"github.com/VendSYSTEM/go-redoc/v3"
+	echoredoc "github.com/VendSYSTEM/go-redoc/echo/v3"
 )
 
 doc := redoc.Redoc{SpecFile: "./openapi.json", SpecPath: "/openapi.json", DocsPath: "/docs"}
@@ -158,8 +158,8 @@ r.Use(echoredoc.New(doc))
 ```go
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/VendSYSTEM/go-redoc/v2"
-	fiberredoc "github.com/VendSYSTEM/go-redoc/fiber"
+	"github.com/VendSYSTEM/go-redoc/v3"
+	fiberredoc "github.com/VendSYSTEM/go-redoc/fiber/v3"
 )
 
 doc := redoc.Redoc{SpecFile: "./openapi.json", SpecPath: "/openapi.json", DocsPath: "/docs"}
@@ -173,8 +173,8 @@ r.Use(fiberredoc.New(doc))
 ```go
 import (
 	"github.com/kataras/iris/v12"
-	"github.com/VendSYSTEM/go-redoc/v2"
-	irisdoc "github.com/VendSYSTEM/go-redoc/iris"
+	"github.com/VendSYSTEM/go-redoc/v3"
+	irisdoc "github.com/VendSYSTEM/go-redoc/iris/v3"
 )
 
 doc := redoc.Redoc{SpecFile: "./openapi.json", SpecPath: "/openapi.json", DocsPath: "/docs"}
