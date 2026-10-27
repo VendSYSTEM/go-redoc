@@ -4,7 +4,7 @@
 
 The package supports `net/http` directly and includes adapters for `gin`, `echo`, `fiber`, and `iris`. It serves an existing OpenAPI JSON or YAML file. It does not generate the spec for you.
 
-The embedded ReDoc bundle is pinned to `redoc@2.5.3` in `Taskfile.yml`.
+The embedded ReDoc bundle is pinned to `redoc@3.0.1` in `Taskfile.yml`.
 
 ## Install
 
