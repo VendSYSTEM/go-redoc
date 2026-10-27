@@ -15,6 +15,6 @@
 <body>
   <div id="main"></div>
   <script type="module">{{ .body }}
-  init({{ .url }}, {}, document.getElementById("main"))</script>
+  init({{ .url }}, {disableTelemetry: true}, document.getElementById("main"))</script>
 </body>
 </html>

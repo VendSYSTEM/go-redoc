@@ -14,6 +14,16 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestBodyDisablesTelemetry(t *testing.T) {
+	body, err := (redoc.Redoc{SpecPath: "/openapi.json"}).Body()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(string(body), `init("/openapi.json", {disableTelemetry: true}, document.getElementById("main"))`) {
+		t.Error("Redoc initialization must disable telemetry")
+	}
+}
+
 func TestBodyRedocModuleAndSafeValues(t *testing.T) {
 	url := `/spec?value="</script><script>alert(1)</script>&unicode=\` + "\u2028"
 	r := redoc.Redoc{SpecPath: url, Title: `<title>&"`, Description: `<desc>&"`}
@@ -31,7 +41,7 @@ func TestBodyRedocModuleAndSafeValues(t *testing.T) {
 	if strings.Count(strings.ToLower(html), "</script>") != 1 {
 		t.Error("inline scripts must not be terminated by the bundle or user values")
 	}
-	match := regexp.MustCompile(`init\(("[^\n]*?"), \{\}, document\.getElementById\("main"\)\)`).FindStringSubmatch(html)
+	match := regexp.MustCompile(`init\(("[^\n]*?"), \{disableTelemetry: true\}, document\.getElementById\("main"\)\)`).FindStringSubmatch(html)
 	if len(match) != 2 {
 		t.Fatal("module initialization with a JSON-encoded URL not found")
 	}
