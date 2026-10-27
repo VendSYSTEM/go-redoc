@@ -1,9 +1,9 @@
-module github.com/VendSYSTEM/go-redoc/gin
+module github.com/VendSYSTEM/go-redoc/gin/v3
 
 go 1.24
 
 require (
-	github.com/VendSYSTEM/go-redoc/v2 v2.0.0
+	github.com/VendSYSTEM/go-redoc/v3 v3.0.0
 	github.com/gin-gonic/gin v1.9.1
 )
 
@@ -35,4 +35,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/VendSYSTEM/go-redoc/v2 => ../
+replace github.com/VendSYSTEM/go-redoc/v3 => ../

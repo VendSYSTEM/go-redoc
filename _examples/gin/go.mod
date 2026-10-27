@@ -2,13 +2,13 @@ module github.com/VendSYSTEM/go-redoc/_examples/gin
 
 go 1.24
 
-replace github.com/VendSYSTEM/go-redoc/v2 => ../../
+replace github.com/VendSYSTEM/go-redoc/v3 => ../../
 
-replace github.com/VendSYSTEM/go-redoc/gin => ../../gin
+replace github.com/VendSYSTEM/go-redoc/gin/v3 => ../../gin
 
 require (
-	github.com/VendSYSTEM/go-redoc/gin v0.0.0
-	github.com/VendSYSTEM/go-redoc/v2 v2.0.0
+	github.com/VendSYSTEM/go-redoc/gin/v3 v3.0.0
+	github.com/VendSYSTEM/go-redoc/v3 v3.0.0
 	github.com/gin-gonic/gin v1.9.1
 )
 

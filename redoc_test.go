@@ -7,7 +7,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/VendSYSTEM/go-redoc/v2"
+	"github.com/VendSYSTEM/go-redoc/v3"
 	"github.com/stretchr/testify/assert"
 )
 

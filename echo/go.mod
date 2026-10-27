@@ -1,9 +1,9 @@
-module github.com/VendSYSTEM/go-redoc/echo
+module github.com/VendSYSTEM/go-redoc/echo/v3
 
 go 1.24
 
 require (
-	github.com/VendSYSTEM/go-redoc/v2 v2.0.0
+	github.com/VendSYSTEM/go-redoc/v3 v3.0.0
 	github.com/labstack/echo/v4 v4.11.4
 )
 
@@ -19,4 +19,4 @@ require (
 	golang.org/x/text v0.14.0 // indirect
 )
 
-replace github.com/VendSYSTEM/go-redoc/v2 => ../
+replace github.com/VendSYSTEM/go-redoc/v3 => ../

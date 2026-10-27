@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/VendSYSTEM/go-redoc/v2"
+	"github.com/VendSYSTEM/go-redoc/v3"
 )
 
 func main() {
