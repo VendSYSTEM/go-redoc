@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"embed"
 	"errors"
+	"html/template"
 	"net/http"
 	"os"
 	"strings"
-	"text/template"
 )
 
 // ErrSpecNotFound error for when spec file not found
@@ -41,8 +41,8 @@ func (r Redoc) Body() ([]byte, error) {
 		return nil, err
 	}
 
-	if err = tpl.Execute(buf, map[string]string{
-		"body":        JavaScript,
+	if err = tpl.Execute(buf, map[string]any{
+		"body":        template.JS(JavaScript),
 		"title":       r.Title,
 		"url":         r.SpecPath,
 		"description": r.Description,
