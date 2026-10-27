@@ -1,10 +1,10 @@
 # go-redoc
 
-`go-redoc` serves OpenAPI documentation with an embedded [ReDoc](https://github.com/ReDocly/redoc) UI. It embeds the HTML template and `redoc.standalone.js` in the Go binary, so the documentation page does not need a CDN at runtime.
+`go-redoc` serves OpenAPI documentation with an embedded [Redoc](https://github.com/Redocly/redoc) UI. It embeds the HTML template and `redoc.standalone.js` in the Go binary, so the page does not need an external JavaScript CDN at runtime. Redoc may still request external resources, such as its logo; this is not a guarantee of fully offline rendering. Telemetry is disabled in the embedded configuration.
 
 The package supports `net/http` directly and includes adapters for `gin`, `echo`, `fiber`, and `iris`. It serves an existing OpenAPI JSON or YAML file. It does not generate the spec for you.
 
-The embedded ReDoc bundle is pinned to `redoc@3.0.1` in `Taskfile.yml`.
+The embedded Redoc bundle is pinned to `redoc@3.0.1` in `Taskfile.yml`. The root module requires Go 1.24 or later.
 
 ## Install
 
@@ -20,6 +20,10 @@ go get github.com/VendSYSTEM/go-redoc/echo/v3
 go get github.com/VendSYSTEM/go-redoc/fiber/v3
 go get github.com/VendSYSTEM/go-redoc/iris/v3
 ```
+
+### Upgrading from v2
+
+Change the root import from `github.com/VendSYSTEM/go-redoc/v2` to `github.com/VendSYSTEM/go-redoc/v3`, and change adapter imports from `github.com/VendSYSTEM/go-redoc/<adapter>/v2` to `github.com/VendSYSTEM/go-redoc/<adapter>/v3`. Update the corresponding module dependencies as well. The Go configuration and handler API remain the same, while the embedded UI is now Redoc 3.
 
 ## Quick Start
 
@@ -51,6 +55,7 @@ func main() {
 ```
 
 Open `http://127.0.0.1:8000/docs`.
+Create `openapi.json` in the working directory before starting the server; the file must contain a valid specification.
 
 ## Configuration
 
@@ -58,7 +63,7 @@ Open `http://127.0.0.1:8000/docs`.
 
 | Field         | Required    | Description                                                                                                                                                     |
 | ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Title`       | No          | HTML page title and ReDoc document title.                                                                                                                       |
+| `Title`       | No          | HTML page title. The displayed API title comes from the specification.                                                                                           |
 | `Description` | No          | HTML meta description.                                                                                                                                          |
 | `SpecFile`    | Yes         | File path to the OpenAPI document. With `SpecFS`, this path is relative to the embedded filesystem. Without `SpecFS`, this path is read from the OS filesystem. |
 | `SpecFS`      | No          | Optional `*embed.FS` used to read `SpecFile` from embedded files.                                                                                               |
@@ -264,7 +269,7 @@ Install the lint dependency without `mise`:
 task deps
 ```
 
-CI runs `go test -race ./...` on Go `1.17` and `1.21`.
+The CI workflow currently lists Go `1.17` and `1.21`, which are older than the root module's Go 1.24 requirement; consult `go.mod` and the workflow before relying on that matrix.
 
 ## Project Layout
 
