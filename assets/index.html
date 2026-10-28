@@ -14,7 +14,7 @@
 </head>
 <body>
   <div id="main"></div>
-  <script>{{ .body }}</script>
-  <script>Redoc.init("{{ .url }}", {}, document.getElementById("main"))</script>
+  <script type="module">{{ .body }}
+  init({{ .url }}, {disableTelemetry: true}, document.getElementById("main"))</script>
 </body>
 </html>

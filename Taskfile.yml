@@ -1,7 +1,7 @@
 version: "3"
 
 vars:
-  REDOC_VERSION: 2.5.3
+  REDOC_VERSION: 3.0.1
   REDOC_PATH: assets/redoc.standalone.js
   REDOC_URL: https://cdn.jsdelivr.net/npm/redoc@{{.REDOC_VERSION}}/bundles/redoc.standalone.js
 
@@ -56,6 +56,5 @@ tasks:
     desc: Download the pinned ReDoc standalone bundle
     cmds:
       - curl -fsSL -o {{.REDOC_PATH}} {{.REDOC_URL}}
-      - perl -0pi -e 's/[ \t]+$//mg' {{.REDOC_PATH}}
     generates:
       - "{{.REDOC_PATH}}"

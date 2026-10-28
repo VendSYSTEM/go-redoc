@@ -2,14 +2,57 @@ package redoc_test
 
 import (
 	"embed"
+	"encoding/json"
 	"io"
 	"net/http"
 	"net/http/httptest"
+	"regexp"
+	"strings"
 	"testing"
 
-	"github.com/mvrilo/go-redoc"
+	"github.com/VendSYSTEM/go-redoc/v3"
 	"github.com/stretchr/testify/assert"
 )
+
+func TestBodyDisablesTelemetry(t *testing.T) {
+	body, err := (redoc.Redoc{SpecPath: "/openapi.json"}).Body()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(string(body), `init("/openapi.json", {disableTelemetry: true}, document.getElementById("main"))`) {
+		t.Error("Redoc initialization must disable telemetry")
+	}
+}
+
+func TestBodyRedocModuleAndSafeValues(t *testing.T) {
+	url := `/spec?value="</script><script>alert(1)</script>&unicode=\` + "\u2028"
+	r := redoc.Redoc{SpecPath: url, Title: `<title>&"`, Description: `<desc>&"`}
+	body, err := r.Body()
+	if err != nil {
+		t.Fatal(err)
+	}
+	html := string(body)
+	if !strings.Contains(redoc.JavaScript, "Version: 3.0.1") {
+		t.Error("embedded bundle is not Redoc 3.0.1")
+	}
+	if !strings.Contains(html, `<script type="module">`) || strings.Contains(html, "Redoc.init(") {
+		t.Error("page must initialize the Redoc module without the removed global")
+	}
+	if strings.Count(strings.ToLower(html), "</script>") != 1 {
+		t.Error("inline scripts must not be terminated by the bundle or user values")
+	}
+	match := regexp.MustCompile(`init\(("[^\n]*?"), \{disableTelemetry: true\}, document\.getElementById\("main"\)\)`).FindStringSubmatch(html)
+	if len(match) != 2 {
+		t.Fatal("module initialization with a JSON-encoded URL not found")
+	}
+	var got string
+	if err := json.Unmarshal([]byte(match[1]), &got); err != nil || got != url {
+		t.Errorf("spec URL round trip = %q, %v; want %q", got, err, url)
+	}
+	if !strings.Contains(html, `&lt;title&gt;&amp;&#34;`) || !strings.Contains(html, `&lt;desc&gt;&amp;&#34;`) {
+		t.Error("title and description must be HTML-escaped")
+	}
+}
 
 //go:embed testdata/spec.json
 var spec embed.FS
